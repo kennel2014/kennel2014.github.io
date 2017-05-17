@@ -14,10 +14,15 @@
 <meta property="og:url" content="http://sniperkaka.com/2017/05/15/20170515-学习笔记-谷歌android培训指南-03-启动另一个-Activity/index.html">
 <meta property="og:site_name" content="卡卡大魔王">
 <meta property="og:description" content="学习笔记-谷歌android培训指南-03-启动另一个 Activity本节将为 MainActivity 添加一些代码，这些代码可在点击“Send”按钮时启动一个新的 Activity。">
-<meta property="og:updated_time" content="2017-05-17T06:49:29.142Z">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-01.jpg">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-02.jpg">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-03.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-04.png">
+<meta property="og:updated_time" content="2017-05-17T07:08:53.041Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习笔记-谷歌android培训指南-03-启动另一个 Activity">
 <meta name="twitter:description" content="学习笔记-谷歌android培训指南-03-启动另一个 Activity本节将为 MainActivity 添加一些代码，这些代码可在点击“Send”按钮时启动一个新的 Activity。">
+<meta name="twitter:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="卡卡大魔王" type="application/atom+xml">
   
@@ -187,8 +192,8 @@ var _hmt = _hmt || [];
       
         <h3 id="学习笔记-谷歌android培训指南-03-启动另一个-Activity"><a href="#学习笔记-谷歌android培训指南-03-启动另一个-Activity" class="headerlink" title="学习笔记-谷歌android培训指南-03-启动另一个 Activity"></a>学习笔记-谷歌android培训指南-03-启动另一个 Activity</h3><h4 id="本节将为-MainActivity-添加一些代码，这些代码可在点击“Send”按钮时启动一个新的-Activity。"><a href="#本节将为-MainActivity-添加一些代码，这些代码可在点击“Send”按钮时启动一个新的-Activity。" class="headerlink" title="本节将为 MainActivity 添加一些代码，这些代码可在点击“Send”按钮时启动一个新的 Activity。"></a>本节将为 MainActivity 添加一些代码，这些代码可在点击“Send”按钮时启动一个新的 Activity。</h4><a id="more"></a>
 <h3 id="响应-Send-按钮"><a href="#响应-Send-按钮" class="headerlink" title="响应 Send 按钮"></a>响应 Send 按钮</h3><ol>
-<li>在文件 res &gt; layout &gt; activity_main.xml 中，将 android:onClick 属性添加到 <button> 元素，如下所示：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;Button</div><div class="line">      android:layout_width=&quot;wrap_content&quot;</div><div class="line">      android:layout_height=&quot;wrap_content&quot;</div><div class="line">      android:text=&quot;@string/button_send&quot;</div><div class="line">      android:onClick=&quot;sendMessage&quot; /&gt;</div></pre></td></tr></table></figure>
-</button></li>
+<li>在文件 res &gt; layout &gt; activity_main.xml 中，将 android:onClick 属性添加到 Button 元素，如下所示：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;Button</div><div class="line">      android:layout_width=&quot;wrap_content&quot;</div><div class="line">      android:layout_height=&quot;wrap_content&quot;</div><div class="line">      android:text=&quot;@string/button_send&quot;</div><div class="line">      android:onClick=&quot;sendMessage&quot; /&gt;</div></pre></td></tr></table></figure>
+</li>
 </ol>
 <p>每次点击按钮时，此属性均会提示系统调用 Activity 中的 sendMessage() 方法。</p>
 <ol>
@@ -216,11 +221,11 @@ var _hmt = _hmt || [];
 <p>startActivity() 方法将启动 Intent 指定的 DisplayMessageActivity 实例。接下来需要创建类。</p>
 <h3 id="创建第二个-Activity"><a href="#创建第二个-Activity" class="headerlink" title="创建第二个 Activity"></a>创建第二个 Activity</h3><ol>
 <li>在 Project 窗口中，右键点击 app 文件夹并选择 New &gt; Activity &gt; Empty Activity。</li>
-<li>在 Configure Activity 窗口中，为 Activity Name 输入 “DisplayMessageActivity”，然后点击 Finish</li>
-</ol>
-<h4 id="Android-Studio-自动执行三项操作："><a href="#Android-Studio-自动执行三项操作：" class="headerlink" title="Android Studio 自动执行三项操作："></a>Android Studio 自动执行三项操作：</h4><blockquote>
+<li>在 Configure Activity 窗口中，为 Activity Name 输入 “DisplayMessageActivity”，然后点击 Finish<br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-01.jpg" alt="01"><h4 id="Android-Studio-自动执行三项操作："><a href="#Android-Studio-自动执行三项操作：" class="headerlink" title="Android Studio 自动执行三项操作："></a>Android Studio 自动执行三项操作：</h4><blockquote>
 <p>使用必需的 onCreate() 方法的实现创建类 DisplayMessageActivity.java。<br>创建对应的布局文件 activity_display_message.xml<br>在 AndroidManifest.xml 中添加必需的 <activity> 元素。</activity></p>
 </blockquote>
+</li>
+</ol>
 <p>如果运行应用并在第一个 Activity 上点击“Send”按钮，则将启动第二个 Activity，但它为空。这是因为第二个 Activity 使用模板提供的默认空布局。</p>
 <h3 id="显示消息"><a href="#显示消息" class="headerlink" title="显示消息"></a>显示消息</h3><h4 id="修改第二个-Activity，以显示第一个-Activity-传递的消息。"><a href="#修改第二个-Activity，以显示第一个-Activity-传递的消息。" class="headerlink" title="修改第二个 Activity，以显示第一个 Activity 传递的消息。"></a>修改第二个 Activity，以显示第一个 Activity 传递的消息。</h4><ol>
 <li><p>在 DisplayMessageActivity.java 中，向 onCreate() 方法添加下列代码：</p>
@@ -236,10 +241,12 @@ var _hmt = _hmt || [];
 <li>编程方式创建 TextView 并设置其大小和消息。</li>
 <li>将 TextView 添加到 R.id.activity_display_message 标识的布局。可将布局投射到 ViewGroup，因为它是所有布局的超类且包含 addView() 方法。<blockquote>
 <p>注：早期版本的 Android Studio 生成的 XML 布局可能不包括 android:id 属性。如果布局没有 android:id 属性，则调用 findViewById() 将失败。如果出现这种情况，打开 activity_display_message.xml 并将属性 android:id=”@+id/activity_display_message” 添加到布局元素。</p>
-<h3 id="上面注中所说的一定要确认下自己的xml中有没有android-id属性，因为本人使用的android-studio-2-3-1中没有自动生成android-id属性，自己添加的。"><a href="#上面注中所说的一定要确认下自己的xml中有没有android-id属性，因为本人使用的android-studio-2-3-1中没有自动生成android-id属性，自己添加的。" class="headerlink" title="上面注中所说的一定要确认下自己的xml中有没有android:id属性，因为本人使用的android studio 2.3.1中没有自动生成android:id属性，自己添加的。"></a>上面注中所说的一定要确认下自己的xml中有没有android:id属性，因为本人使用的android studio 2.3.1中没有自动生成android:id属性，自己添加的。</h3></blockquote>
+<h3 id="上面注中所说的一定要确认下自己的xml中有没有android-id属性，因为本人使用的android-studio-2-3-1中没有自动生成android-id属性，自己添加的。"><a href="#上面注中所说的一定要确认下自己的xml中有没有android-id属性，因为本人使用的android-studio-2-3-1中没有自动生成android-id属性，自己添加的。" class="headerlink" title="上面注中所说的一定要确认下自己的xml中有没有android:id属性，因为本人使用的android studio 2.3.1中没有自动生成android:id属性，自己添加的。"></a>上面注中所说的一定要确认下自己的xml中有没有android:id属性，因为本人使用的android studio 2.3.1中没有自动生成android:id属性，自己添加的。</h3><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-02.jpg" alt="02"><br>现在便可运行该应用。当应用打开后，请在文本字段键入消息，然后点击 Send。第二个 Activity 将替换屏幕中的第一个 Activity，并显示在第一个 Activity 中输入的消息。</p>
+</blockquote>
 </li>
 </ul>
-<p>现在便可运行该应用。当应用打开后，请在文本字段键入消息，然后点击 Send。第二个 Activity 将替换屏幕中的第一个 Activity，并显示在第一个 Activity 中输入的消息。</p>
+<h3 id="运行效果图："><a href="#运行效果图：" class="headerlink" title="运行效果图："></a>运行效果图：</h3><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-03.png" alt="03"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-04.png" alt="04"></p>
+<p>[END]</p>
 
       
 
