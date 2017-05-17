@@ -18,7 +18,7 @@
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-02.jpg">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-03.png">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-04.png">
-<meta property="og:updated_time" content="2017-05-17T07:08:53.041Z">
+<meta property="og:updated_time" content="2017-05-17T07:28:11.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习笔记-谷歌android培训指南-03-启动另一个 Activity">
 <meta name="twitter:description" content="学习笔记-谷歌android培训指南-03-启动另一个 Activity本节将为 MainActivity 添加一些代码，这些代码可在点击“Send”按钮时启动一个新的 Activity。">
@@ -241,10 +241,11 @@ var _hmt = _hmt || [];
 <li>编程方式创建 TextView 并设置其大小和消息。</li>
 <li>将 TextView 添加到 R.id.activity_display_message 标识的布局。可将布局投射到 ViewGroup，因为它是所有布局的超类且包含 addView() 方法。<blockquote>
 <p>注：早期版本的 Android Studio 生成的 XML 布局可能不包括 android:id 属性。如果布局没有 android:id 属性，则调用 findViewById() 将失败。如果出现这种情况，打开 activity_display_message.xml 并将属性 android:id=”@+id/activity_display_message” 添加到布局元素。</p>
-<h3 id="上面注中所说的一定要确认下自己的xml中有没有android-id属性，因为本人使用的android-studio-2-3-1中没有自动生成android-id属性，自己添加的。"><a href="#上面注中所说的一定要确认下自己的xml中有没有android-id属性，因为本人使用的android-studio-2-3-1中没有自动生成android-id属性，自己添加的。" class="headerlink" title="上面注中所说的一定要确认下自己的xml中有没有android:id属性，因为本人使用的android studio 2.3.1中没有自动生成android:id属性，自己添加的。"></a>上面注中所说的一定要确认下自己的xml中有没有android:id属性，因为本人使用的android studio 2.3.1中没有自动生成android:id属性，自己添加的。</h3><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-02.jpg" alt="02"><br>现在便可运行该应用。当应用打开后，请在文本字段键入消息，然后点击 Send。第二个 Activity 将替换屏幕中的第一个 Activity，并显示在第一个 Activity 中输入的消息。</p>
+<h3 id="上面注中所说的一定要确认下自己的xml中有没有android-id属性，因为本人使用的android-studio-2-3-1中没有自动生成android-id属性，自己添加的。"><a href="#上面注中所说的一定要确认下自己的xml中有没有android-id属性，因为本人使用的android-studio-2-3-1中没有自动生成android-id属性，自己添加的。" class="headerlink" title="上面注中所说的一定要确认下自己的xml中有没有android:id属性，因为本人使用的android studio 2.3.1中没有自动生成android:id属性，自己添加的。"></a>上面注中所说的一定要确认下自己的xml中有没有android:id属性，因为本人使用的android studio 2.3.1中没有自动生成android:id属性，自己添加的。</h3><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-02.jpg" alt="02"></p>
 </blockquote>
 </li>
 </ul>
+<p>现在便可运行该应用。当应用打开后，请在文本字段键入消息，然后点击 Send。第二个 Activity 将替换屏幕中的第一个 Activity，并显示在第一个 Activity 中输入的消息。</p>
 <h3 id="运行效果图："><a href="#运行效果图：" class="headerlink" title="运行效果图："></a>运行效果图：</h3><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-03.png" alt="03"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170515_AndroidGuide-03-04.png" alt="04"></p>
 <p>[END]</p>
 
