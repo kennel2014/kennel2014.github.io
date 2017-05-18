@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170517_%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81-%E5%B0%81%E9%9D%A2.jpg">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170517_1000px-Android-System-Architecture.svg.png">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170517_FirstLineCode-01-01.jpg">
-<meta property="og:updated_time" content="2017-05-18T05:17:45.264Z">
+<meta property="og:updated_time" content="2017-05-18T05:46:26.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读书笔记-第一行代码-01-第一行Android代码">
 <meta name="twitter:description" content="本书基于Android 7.0,Android studio 2.2本人的环境是Android studio 2.3.1">
@@ -212,6 +212,19 @@ var _hmt = _hmt || [];
 <p><a href="http://sniperkaka.com/2017/05/13/20170513-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B0%B7%E6%AD%8Candroid%E5%9F%B9%E8%AE%AD%E6%8C%87%E5%8D%97-00/">环境搭建参考之前的blog</a></p>
 <p>创建第一个应用程序<a href="http://sniperkaka.com/2017/05/13/20170513-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B0%B7%E6%AD%8Candroid%E5%9F%B9%E8%AE%AD%E6%8C%87%E5%8D%97-01-%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8/">参考之前的blog</a><br>Application name表示应用名称，安装后在手机上显示的名称。<br>Company Domain表示公司域名。<br>Package name表示项目的包名，Android系统就是通过包名来区分不同应用程序，因此包名一定要具有唯一性。</p>
 <h3 id="Project目录结构"><a href="#Project目录结构" class="headerlink" title="Project目录结构"></a>Project目录结构</h3><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170517_FirstLineCode-01-01.jpg" alt="project-floder"></p>
+<ol>
+<li>.grade和.idea<br>这两个目录是Android studio 自动生成的一些文件，不需要关心。</li>
+<li>app<br>项目中的代码、资源等基本放置在这个目录下。</li>
+<li>build<br>主要包含一些编译时自动生成的文件，不需要关心。</li>
+<li>gradle<br>包含gradle wrapper的配置文件。Android studio默认没有启用gradle wrapper的方式，如果需要打开，点击file-&gt;setting-&gt;build-&gt;execution,deployment-&gt;gradle，进行配置更改。</li>
+<li>.gitignore<br>用来指定的目录或文件排除在版本控制之外。</li>
+<li>build.gradle<br>项目全局的gradle构建脚本，通常这个文件的内容不需要修改。</li>
+<li>gradle.properties<br>全局的gradle配置文件，里面的属性会影响到项目中所有的gradle编译脚本。</li>
+<li>gradlew和gradlew.bat<br>用来在命令行界面执行gradle命令，gradlew是linux或mac系统使用，gradlew.bat是windows系统使用。</li>
+<li>MyApplication.iml<br>iml文件是所有IntelliJ IDEA项目都会自动生成的一个文件（Android studio是基于IntelliJ IDEA开发的），用于标识这是一个IntelliJ IDEA项目，不需要关心。</li>
+<li>local.properties<br>用于指定本机中的Android sdk路径，通常是自动生成的，一般不需要改动。</li>
+<li>setting.gradle<br>用于指定项目中所有引入的模块，通常情况下模块的引入都是自动完成的。默认创建的项目中只有一个app模块。</li>
+</ol>
 
       
 
