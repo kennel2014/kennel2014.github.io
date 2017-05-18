@@ -16,7 +16,7 @@
 <meta property="og:description" content="本书基于Android 7.0,Android studio 2.2本人的环境是Android studio 2.3.1">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170517_%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81-%E5%B0%81%E9%9D%A2.jpg">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170517_1000px-Android-System-Architecture.svg.png">
-<meta property="og:updated_time" content="2017-05-18T04:39:00.410Z">
+<meta property="og:updated_time" content="2017-05-18T04:49:32.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读书笔记-第一行代码-01-第一行Android代码">
 <meta name="twitter:description" content="本书基于Android 7.0,Android studio 2.2本人的环境是Android studio 2.3.1">
@@ -195,7 +195,17 @@ var _hmt = _hmt || [];
 <li>Linux内核层<br>Android系统是基于linux内核的，这一层为Android设备的各种硬件提供了底层的驱动，如显示驱动、音频驱动、照相机驱动、蓝牙驱动、wifi驱动、电源驱动等。</li>
 <li>系统运行库层<br>这一层通过一些c/c++库来为Android系统提供主要的特性支持，如SQLite库提供了数据库的支持，Opengl|es库提供了3D绘图的支持，webkit库提供了浏览器内核的支持等。<br>还有运行时库，主要提供一些核心库，允许开发者使用java编写Android应用。运行时库还包含了Dalvik虚拟机（5.0系统后改为ART运行环境），太( ⊙ o ⊙ )使得每一个Android应用都能运行在独立的进程中，并且拥有一个自己的Dalvik虚拟机实例。Dalvik是专门为移动设备定制的，针对手机内存、CPU性能有限等情况做了优化处理。</li>
 <li>应用框架层<br>主要提供了构建应用程序时可能用到的各种API。</li>
-<li>应用层<br>所有安装在手机上的应用程序都属于这一层，比如系统自带的联系人、短信等程序，或从google play上下载的小游戏等。<br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170517_1000px-Android-System-Architecture.svg.png" alt="android-arch"><br>Android系统架构</li>
+<li>应用层<br>所有安装在手机上的应用程序都属于这一层，比如系统自带的联系人、短信等程序，或从google play上下载的小游戏等。</li>
+</ul>
+</blockquote>
+<p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170517_1000px-Android-System-Architecture.svg.png" alt="android-arch"><br>Android系统架构</p>
+<h3 id="Android系统提供供开发应用程序的内容"><a href="#Android系统提供供开发应用程序的内容" class="headerlink" title="Android系统提供供开发应用程序的内容"></a>Android系统提供供开发应用程序的内容</h3><blockquote>
+<ul>
+<li>四大组件：活动（activity）、服务（service）、广播接收器（broadcast receiver）、内容提供器（content provider）。<br>活动：所有在应用中看得到的东西，都是放在活动中的。<br>服务：后台运行，即使用户退出了应用，服务仍可继续运行。<br>广播接收器：允许应用接收来自各处的广播消息，比如电话，短信等，应用也可以向外发出广播消息。<br>内容提供器：为程序间共享数据，比如要读取系统电话薄中的联系人，就需要通过内容提供器来实现。</li>
+<li>系统控件</li>
+<li>SQLite数据库<br>一种轻量级嵌入式关系型数据库，支持标准SQL语法。</li>
+<li>多媒体<br>如音乐、视频、录音、拍照、闹铃等，都可以通过代码来控制</li>
+<li>地理位置定位</li>
 </ul>
 </blockquote>
 
