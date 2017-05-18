@@ -15,7 +15,8 @@
 <meta property="og:site_name" content="卡卡大魔王">
 <meta property="og:description" content="本书基于Android 7.0,Android studio 2.2本人的环境是Android studio 2.3.1">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170517_%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81-%E5%B0%81%E9%9D%A2.jpg">
-<meta property="og:updated_time" content="2017-05-18T03:16:45.984Z">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170517_1000px-Android-System-Architecture.svg.png">
+<meta property="og:updated_time" content="2017-05-18T04:39:00.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读书笔记-第一行代码-01-第一行Android代码">
 <meta name="twitter:description" content="本书基于Android 7.0,Android studio 2.2本人的环境是Android studio 2.3.1">
@@ -192,7 +193,9 @@ var _hmt = _hmt || [];
 <h3 id="第一章-开始启程-你的第一行Android代码"><a href="#第一章-开始启程-你的第一行Android代码" class="headerlink" title="第一章 开始启程-你的第一行Android代码"></a>第一章 开始启程-你的第一行Android代码</h3><h3 id="Android系统架构"><a href="#Android系统架构" class="headerlink" title="Android系统架构"></a>Android系统架构</h3><h4 id="Android-大致可以分为四层架构：linux内核层、系统运行库层、应用框架层和应用层。"><a href="#Android-大致可以分为四层架构：linux内核层、系统运行库层、应用框架层和应用层。" class="headerlink" title="Android 大致可以分为四层架构：linux内核层、系统运行库层、应用框架层和应用层。"></a>Android 大致可以分为四层架构：linux内核层、系统运行库层、应用框架层和应用层。</h4><blockquote>
 <ul>
 <li>Linux内核层<br>Android系统是基于linux内核的，这一层为Android设备的各种硬件提供了底层的驱动，如显示驱动、音频驱动、照相机驱动、蓝牙驱动、wifi驱动、电源驱动等。</li>
-<li>系统运行库层<br>这一层 </li>
+<li>系统运行库层<br>这一层通过一些c/c++库来为Android系统提供主要的特性支持，如SQLite库提供了数据库的支持，Opengl|es库提供了3D绘图的支持，webkit库提供了浏览器内核的支持等。<br>还有运行时库，主要提供一些核心库，允许开发者使用java编写Android应用。运行时库还包含了Dalvik虚拟机（5.0系统后改为ART运行环境），太( ⊙ o ⊙ )使得每一个Android应用都能运行在独立的进程中，并且拥有一个自己的Dalvik虚拟机实例。Dalvik是专门为移动设备定制的，针对手机内存、CPU性能有限等情况做了优化处理。</li>
+<li>应用框架层<br>主要提供了构建应用程序时可能用到的各种API。</li>
+<li>应用层<br>所有安装在手机上的应用程序都属于这一层，比如系统自带的联系人、短信等程序，或从google play上下载的小游戏等。<br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170517_1000px-Android-System-Architecture.svg.png" alt="android-arch"><br>Android系统架构</li>
 </ul>
 </blockquote>
 
