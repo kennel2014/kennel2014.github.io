@@ -14,12 +14,13 @@
 <meta property="og:url" content="http://sniperkaka.com/2017/05/16/20170516-学习笔记-谷歌android培训指南-04-支持不同的设备/index.html">
 <meta property="og:site_name" content="卡卡大魔王">
 <meta property="og:description" content="学习笔记-谷歌android培训指南-04-支持不同的设备在任何情况下，从应用代码中提取 UI 字符串并将其存放在外部文件中都是个好办法。Android 在每个 Android 项目中都提供一个资源目录，从而简化了这一过程。 res/ 目录中包含用于存放各类资源的子目录。此外，还包含几个默认文件（如 res/values/strings.xml），用于存放字符串值。">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170516_AndroidGuide-04-01.jpg">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170516_AndroidGuide-04-02.jpg">
-<meta property="og:updated_time" content="2017-05-18T01:23:02.847Z">
+<meta property="og:updated_time" content="2017-05-18T01:45:31.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习笔记-谷歌android培训指南-04-支持不同的设备">
 <meta name="twitter:description" content="学习笔记-谷歌android培训指南-04-支持不同的设备在任何情况下，从应用代码中提取 UI 字符串并将其存放在外部文件中都是个好办法。Android 在每个 Android 项目中都提供一个资源目录，从而简化了这一过程。 res/ 目录中包含用于存放各类资源的子目录。此外，还包含几个默认文件（如 res/values/strings.xml），用于存放字符串值。">
-<meta name="twitter:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170516_AndroidGuide-04-02.jpg">
+<meta name="twitter:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170516_AndroidGuide-04-01.jpg">
   
     <link rel="alternative" href="/atom.xml" title="卡卡大魔王" type="application/atom+xml">
   
@@ -189,10 +190,18 @@ var _hmt = _hmt || [];
       
         <h3 id="学习笔记-谷歌android培训指南-04-支持不同的设备"><a href="#学习笔记-谷歌android培训指南-04-支持不同的设备" class="headerlink" title="学习笔记-谷歌android培训指南-04-支持不同的设备"></a>学习笔记-谷歌android培训指南-04-支持不同的设备</h3><p>在任何情况下，从应用代码中提取 UI 字符串并将其存放在外部文件中都是个好办法。Android 在每个 Android 项目中都提供一个资源目录，从而简化了这一过程。<br> res/ 目录中包含用于存放各类资源的子目录。此外，还包含几个默认文件（如 res/values/strings.xml），用于存放字符串值。<br><a id="more"></a></p>
 <h3 id="创建语言区域目录和字符串文件"><a href="#创建语言区域目录和字符串文件" class="headerlink" title="创建语言区域目录和字符串文件"></a>创建语言区域目录和字符串文件</h3><p>如需添加对更多语言的支持，需要在res下额外创建values res目录，并在目录名称末尾加上连字符和 ISO 语言代码。例如，values-es/ 目录包含的简单资源用于语言代码为“es”的语言区域。Android 根据运行时设备的语言区域设置加载相应的资源。<a href="https://developer.android.google.cn/guide/topics/resources/providing-resources.html#AlternativeResources" target="_blank" rel="external">更详细的信息参考这儿</a></p>
-<p>一旦决定了为哪些语言提供支持，便可创建资源子目录和字符串资源文件。 例如：<br>idGuide-04-01](<a href="http://opofdk402.bkt.clouddn.com/blogkaka_20170516_AndroidGuide-04-01.jpg" target="_blank" rel="external">http://opofdk402.bkt.clouddn.com/blogkaka_20170516_AndroidGuide-04-01.jpg</a>)<br>将各个语言区域的字符串值添加到相应文件中。</p>
+<p>一旦决定了为哪些语言提供支持，便可创建资源子目录和字符串资源文件。 例如：<br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170516_AndroidGuide-04-01.jpg" alt="AndroidGuide-04-01"><br>将各个语言区域的字符串值添加到相应文件中。</p>
 <blockquote>
-<p>具体操作是：<br>切换到project模式，app-&gt;src-&gt;main-&gt;res路径下，增加两个目录values-es/values-fr（这两个目录与values同级）然后在这两个目录下分别添加strings.xml文件。如下图<br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170516_AndroidGuide-04-02.jpg" alt="02"></p>
+<p>具体操作是：<br>切换到project模式，app-&gt;src-&gt;main-&gt;res路径下，增加两个目录values-es/values-fr（这两个目录与values同级）然后在这两个目录下分别添加strings.xml文件。如下图<br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170516_AndroidGuide-04-02.jpg" alt="AndroidGuide-04-02"></p>
 </blockquote>
+<p>在运行时，Android 系统会根据当前为用户设备设置的语言区域使用相应的字符串资源集。<br>例如，以下是一些面向不同语言的不同字符串资源文件。<br>英语（默认语言区域），/values/strings.xml：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;resources&gt;</div><div class="line">    &lt;string name=&quot;title&quot;&gt;My Application&lt;/string&gt;</div><div class="line">    &lt;string name=&quot;hello_world&quot;&gt;Hello World!&lt;/string&gt;</div><div class="line">&lt;/resources&gt;</div></pre></td></tr></table></figure></p>
+<p>西班牙语，/values-es/strings.xml：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;resources&gt;</div><div class="line">    &lt;string name=&quot;title&quot;&gt;Mi Aplicación&lt;/string&gt;</div><div class="line">    &lt;string name=&quot;hello_world&quot;&gt;Hola Mundo!&lt;/string&gt;</div><div class="line">&lt;/resources&gt;</div></pre></td></tr></table></figure></p>
+<p>法语，/values-fr/strings.xml：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;resources&gt;</div><div class="line">    &lt;string name=&quot;title&quot;&gt;Mon Application&lt;/string&gt;</div><div class="line">    &lt;string name=&quot;hello_world&quot;&gt;Bonjour le monde !&lt;/string&gt;</div><div class="line">&lt;/resources&gt;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注：可以在任何资源类型上使用语言区域限定符（或任何配置限定符），例如，可以提供本地化版本的可绘制位图。 <a href="https://developer.android.google.cn/guide/topics/resources/localization.html" target="_blank" rel="external">more details</a></p>
+</blockquote>
+<h3 id="使用字符串资源"><a href="#使用字符串资源" class="headerlink" title="使用字符串资源"></a>使用字符串资源</h3><p>可以使用由string元素的 name 属性定义的资源名称在源代码和其他 XML 文件中引用字符串资源。源代码中，可以使用语法R.string.string_name 引用字符串资源。有许多方法都接受以这种方式引用的字符串资源。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// Get a string resource from your app&apos;s Resources</div><div class="line">String hello = getResources().getString(R.string.hello_world);</div><div class="line"></div><div class="line">// Or supply a string resource to a method that requires a string</div><div class="line">TextView textView = new TextView(this);</div><div class="line">textView.setText(R.string.hello_world);</div></pre></td></tr></table></figure></p>
+<p>在其他 XML 文件中，只要 XML 属性接受字符串值，您就可以使用语法 @string/string_name 引用字符串资源。<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;TextView</div><div class="line">    android:layout_width=&quot;wrap_content&quot;</div><div class="line">    android:layout_height=&quot;wrap_content&quot;</div><div class="line">    android:text=&quot;@string/hello_world&quot; /&gt;</div></pre></td></tr></table></figure></p>
 
       
 
