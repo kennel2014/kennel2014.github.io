@@ -21,10 +21,10 @@ Wi-Fi认证过程
 Wi-Fi认证过程
 802.11标准中的数据安全加密协议">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-01.png">
-<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-02.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-23-ap-beacon-02.png">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-24-wificonnect-status.png">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-25-probeReq-01.png">
-<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-25-probeReq-02.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-26-probeReq-02.png">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-27-ap-probeRsp.png">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-28-ap-auth-01.png">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-29-ap-auth-02.png">
@@ -36,7 +36,7 @@ Wi-Fi认证过程
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-35-association-04.png">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-36-disassociation-01.png">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-37-disassociation-02.png">
-<meta property="og:updated_time" content="2017-05-19T08:05:42.542Z">
+<meta property="og:updated_time" content="2017-05-19T08:08:29.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续">
 <meta name="twitter:description" content="目录
@@ -222,8 +222,8 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>ifconfig -a<br>ifconfig wlan1 up<br>airmon-ng start wlan1<br>启动wireshark，选择mon0网卡(开启了Monotor模式的虚拟网卡</p>
 </blockquote>
-<h3 id="0x1-普通无加密连接过程"><a href="#0x1-普通无加密连接过程" class="headerlink" title="0x1: 普通无加密连接过程"></a>0x1: 普通无加密连接过程</h3><h4 id="1-AP发送Beacon广播管理帧"><a href="#1-AP发送Beacon广播管理帧" class="headerlink" title="1. AP发送Beacon广播管理帧"></a>1. AP发送Beacon广播管理帧</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-01.png" alt="ap-beacon-01"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-02.png" alt="ap-beacon-02"><br>因为AP发送的这个Beacon管理帧数据包是广播地址，所以我们的PCMIA内置网卡、或者USB外界网卡会接收到这个数据包，然后在我们的”无线连接列表”中显示出来<br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-24-wificonnect-status.png" alt="wifistatus"></p>
-<h4 id="2-客户端向承载指定SSID的AP发送Probe-Request-探测请求-帧"><a href="#2-客户端向承载指定SSID的AP发送Probe-Request-探测请求-帧" class="headerlink" title="2. 客户端向承载指定SSID的AP发送Probe Request(探测请求)帧"></a>2. 客户端向承载指定SSID的AP发送Probe Request(探测请求)帧</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-25-probeReq-01.png" alt="ap-probe-req-01"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-25-probeReq-02.png" alt="ap-probe-req-02"><br>当我们点击”连接”的时候，无线网卡就会发送一个Prob数据帧，用来向AP请求连接</p>
+<h3 id="0x1-普通无加密连接过程"><a href="#0x1-普通无加密连接过程" class="headerlink" title="0x1: 普通无加密连接过程"></a>0x1: 普通无加密连接过程</h3><h4 id="1-AP发送Beacon广播管理帧"><a href="#1-AP发送Beacon广播管理帧" class="headerlink" title="1. AP发送Beacon广播管理帧"></a>1. AP发送Beacon广播管理帧</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-01.png" alt="ap-beacon-01"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-23-ap-beacon-02.png" alt="ap-beacon-02"><br>因为AP发送的这个Beacon管理帧数据包是广播地址，所以我们的PCMIA内置网卡、或者USB外界网卡会接收到这个数据包，然后在我们的”无线连接列表”中显示出来<br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-24-wificonnect-status.png" alt="wifistatus"></p>
+<h4 id="2-客户端向承载指定SSID的AP发送Probe-Request-探测请求-帧"><a href="#2-客户端向承载指定SSID的AP发送Probe-Request-探测请求-帧" class="headerlink" title="2. 客户端向承载指定SSID的AP发送Probe Request(探测请求)帧"></a>2. 客户端向承载指定SSID的AP发送Probe Request(探测请求)帧</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-25-probeReq-01.png" alt="ap-probe-req-01"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-26-probeReq-02.png" alt="ap-probe-req-02"><br>当我们点击”连接”的时候，无线网卡就会发送一个Prob数据帧，用来向AP请求连接</p>
 <h4 id="3-AP接入点对客户端的SSID连接请求进行应答"><a href="#3-AP接入点对客户端的SSID连接请求进行应答" class="headerlink" title="3. AP接入点对客户端的SSID连接请求进行应答"></a>3. AP接入点对客户端的SSID连接请求进行应答</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-27-ap-probeRsp.png" alt="ap-probe-rsp-27"><br>AP对客户端的连接作出了回应，并表示不接受任何形式的”帧有效负载加密(frame-payload-encryption)”</p>
 <h4 id="4-客户端对目标AP请求进行身份认证-Authentication"><a href="#4-客户端对目标AP请求进行身份认证-Authentication" class="headerlink" title="4. 客户端对目标AP请求进行身份认证(Authentication)"></a>4. 客户端对目标AP请求进行身份认证(Authentication)</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-28-ap-auth-01.png" alt="auth-28"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-29-ap-auth-02.png" alt="auth-29"></p>
 <h4 id="5-AP对客户端的身份认证-Authentication-请求作出回应"><a href="#5-AP对客户端的身份认证-Authentication-请求作出回应" class="headerlink" title="5. AP对客户端的身份认证(Authentication)请求作出回应"></a>5. AP对客户端的身份认证(Authentication)请求作出回应</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-30-ap-auth-03.png" alt="auth-30"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-31-ap-auth-04.png" alt="auth-31"><br>AP回应，表示接收身份认证</p>
