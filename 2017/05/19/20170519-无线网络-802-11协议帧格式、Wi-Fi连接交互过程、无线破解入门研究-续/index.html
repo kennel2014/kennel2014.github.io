@@ -6,14 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://sniperkaka.com">
-  <title>Archives | 卡卡大魔王</title>
+  <title>无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续 | 卡卡大魔王</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="卡卡大魔王">
-<meta property="og:url" content="http://sniperkaka.com/archives/page/3/index.html">
+  <meta name="description" content="目录
+
+Wi-Fi认证过程
+802.11标准中的数据安全加密协议">
+<meta property="og:type" content="article">
+<meta property="og:title" content="无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续">
+<meta property="og:url" content="http://sniperkaka.com/2017/05/19/20170519-无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续/index.html">
 <meta property="og:site_name" content="卡卡大魔王">
+<meta property="og:description" content="目录
+
+Wi-Fi认证过程
+802.11标准中的数据安全加密协议">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-01.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-02.png">
+<meta property="og:updated_time" content="2017-05-19T06:56:37.445Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="卡卡大魔王">
+<meta name="twitter:title" content="无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续">
+<meta name="twitter:description" content="目录
+
+Wi-Fi认证过程
+802.11标准中的数据安全加密协议">
+<meta name="twitter:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-01.png">
   
     <link rel="alternative" href="/atom.xml" title="卡卡大魔王" type="application/atom+xml">
   
@@ -161,413 +177,163 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-20170519-无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续
+    </h1>
+  
+
+        
+        <a href="/2017/05/19/20170519-无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续/" class="archive-article-date">
+  	<time datetime="2017-05-19T06:35:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-19</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><blockquote>
+<ol>
+<li>Wi-Fi认证过程</li>
+<li>802.11标准中的数据安全加密协议</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<h3 id="3-Wi-Fi认证过程"><a href="#3-Wi-Fi认证过程" class="headerlink" title="3. Wi-Fi认证过程"></a>3. Wi-Fi认证过程</h3><p>有了802.11协议的基本格式之后，我们可以使用wireshark进行抓包实验，验证一下我们的理论</p>
+<blockquote>
+<p>ifconfig -a<br>ifconfig wlan1 up<br>airmon-ng start wlan1<br>启动wireshark，选择mon0网卡(开启了Monotor模式的虚拟网卡</p>
+</blockquote>
+<h3 id="0x1-普通无加密连接过程"><a href="#0x1-普通无加密连接过程" class="headerlink" title="0x1: 普通无加密连接过程"></a>0x1: 普通无加密连接过程</h3><h4 id="1-AP发送Beacon广播管理帧"><a href="#1-AP发送Beacon广播管理帧" class="headerlink" title="1. AP发送Beacon广播管理帧"></a>1. AP发送Beacon广播管理帧</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-01.png" alt="ap-beacon-01"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-02.png" alt="ap-beacon-02"><br>因为AP发送的这个Beacon管理帧数据包是广播地址，所以我们的PCMIA内置网卡、或者USB外界网卡会接收到这个数据包，然后在我们的”无线连接列表”中显示出来</p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://www.cnblogs.com/littlehann/p/3700357.html" target="_blank" rel="external">802.11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢大好人~~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://opofdk402.bkt.clouddn.com/blogkaka_weixin_pay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/12/刘慈欣作品-按创作时间排序-20161212/" class="archive-article-date">
-  	<time datetime="2016-12-12T00:47:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/12/刘慈欣作品-按创作时间排序-20161212/">刘慈欣作品-按创作时间排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">科幻</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">书单</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">无线网络</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://sniperkaka.com/2017/05/19/20170519-无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/29/Doom启示录-读书笔记-20161129-03/" class="archive-article-date">
-  	<time datetime="2016-11-29T07:37:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/29/Doom启示录-读书笔记-20161129-03/">Doom启示录-读书笔记-03</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/29/Doom启示录-读书笔记-20161129-02/" class="archive-article-date">
-  	<time datetime="2016-11-29T06:55:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/29/Doom启示录-读书笔记-20161129-02/">Doom启示录-读书笔记-02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/29/Doom启示录-读书笔记-20161129/" class="archive-article-date">
-  	<time datetime="2016-11-29T05:37:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/29/Doom启示录-读书笔记-20161129/">Doom启示录-读书笔记-01</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/25/VimCheatSheetForProgrammersPrint-20161125/" class="archive-article-date">
-  	<time datetime="2016-11-25T06:15:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/25/VimCheatSheetForProgrammersPrint-20161125/">vim cheat sheet for programmers print</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/24/Markdown语法快速入门-20161124/" class="archive-article-date">
-  	<time datetime="2016-11-24T06:38:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/24/Markdown语法快速入门-20161124/">Markdown语法快速入门</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/23/我家的新成员-二炮大人-20161123/" class="archive-article-date">
-  	<time datetime="2016-11-23T05:40:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/23/我家的新成员-二炮大人-20161123/">我家的新成员-二炮大人</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/19/两个人的周末-20161119/" class="archive-article-date">
-  	<time datetime="2016-11-19T15:12:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/19/两个人的周末-20161119/">两个人的周末</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/18/hehe-20161118/" class="archive-article-date">
-  	<time datetime="2016-11-18T09:52:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/18/hehe-20161118/">个人博客搭建 hexo + github</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境搭建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/18/个人博客的第一篇-20161118/" class="archive-article-date">
-  	<time datetime="2016-11-18T01:11:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/18/个人博客的第一篇-20161118/">博客搭建成功后的第一篇日志</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">杂七杂八</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/05/19/20170519-无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">802.11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
 
@@ -602,8 +368,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
