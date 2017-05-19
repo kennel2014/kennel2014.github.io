@@ -24,7 +24,9 @@ Wi-Fi认证过程
 802.11协议格式
 Wi-Fi认证过程
 802.11标准中的数据安全加密协议">
-<meta property="og:updated_time" content="2017-05-19T02:03:31.930Z">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-01-adhoc.jpg">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-02-adhoc.png">
+<meta property="og:updated_time" content="2017-05-19T03:23:29.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="802.11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究">
 <meta name="twitter:description" content="目录
@@ -33,6 +35,7 @@ Wi-Fi认证过程
 802.11协议格式
 Wi-Fi认证过程
 802.11标准中的数据安全加密协议">
+<meta name="twitter:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-01-adhoc.jpg">
   
     <link rel="alternative" href="/atom.xml" title="卡卡大魔王" type="application/atom+xml">
   
@@ -200,15 +203,37 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><blockquote>
+        <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><blockquote>
 <ol>
 <li>802.11标准简介</li>
 <li>802.11协议格式</li>
 <li>Wi-Fi认证过程</li>
 <li>802.11标准中的数据安全加密协议<a id="more"></a>
-</li>
+<h3 id="1-802-11标准简介"><a href="#1-802-11标准简介" class="headerlink" title="1. 802.11标准简介"></a>1. 802.11标准简介</h3>IEEE 802.11是现今无线局域网通用的标准，它是由国际电机电子工程学会(IEEE)所定义的无线网络通信的标准。<br>其中定义了媒体访问控制层(MAC层)和物理层。物理层定义了工作在2.4GHz的ISM频段上的两种扩频作调制方式和一种红外传输的方式，总数据传输速率设计为2Mbit/s。两个设备可以自行构建临时网络，也可以在基站(Base Station, BS)或者接入点(Access Point，AP)的协调下通信。为了在不同的通讯环境下取得良好的通讯质量，采用CSMA/CA(Carrier Sense Multiple Access／Collision Avoidance)硬件沟通方式.<br>注意：802.11和Wi-Fi技术并不是同一个东西。Wi-Fi标准是802.11标准的一个子集，并且是Wi-Fi联盟负责管理。</li>
 </ol>
 </blockquote>
+<h4 id="在802-11协议的发展过程中，衍生出了一系列的和安全、加密相关的技术"><a href="#在802-11协议的发展过程中，衍生出了一系列的和安全、加密相关的技术" class="headerlink" title="在802.11协议的发展过程中，衍生出了一系列的和安全、加密相关的技术"></a>在802.11协议的发展过程中，衍生出了一系列的和安全、加密相关的技术</h4><blockquote>
+<ol>
+<li>WEP，Wired Equivalent Privacy: 802.11中最早期的加密标准</li>
+<li>CCMP(CTR with CBC-MAC Protocol): 基于AES的全新加密协议，在IEEE 802.11i中提出</li>
+<li>WPA(Wi-Fi Protected Access)</li>
+<li>TKIP(Temporal Key Integrity Protocol)</li>
+<li>WPA2(Wi-Fi Protected Access 2)</li>
+</ol>
+</blockquote>
+<h4 id="802-11标准将所有的数据包分为3种"><a href="#802-11标准将所有的数据包分为3种" class="headerlink" title="802.11标准将所有的数据包分为3种:"></a>802.11标准将所有的数据包分为3种:</h4><blockquote>
+<ol>
+<li>数据: 数据数据包的作用是用来携带更高层次的数据(如IP数据包，ISO7层协议)。<br>它负责在工作站之间传输数据.</li>
+<li>管理: 管理数据包控制网络的管理功能<br> 1) 信标帧(Beacons): 在无线设备中，定时依次按指定间隔发送的有规律的无线信号(类似心跳包)，主要用于定位和同步使用<br> 2) 解除认证(Deauthentication)数据包<br> 3) Probe(request and response)<br> 4) Authenticate(request and response)<br> 5) Associate(request and response)<br> 6) Reassociate(request and response)<br> 7) Dissassociate(notify)<br>管理帧负责监督，主要用来加入或退出无线网络，以及处理接入点之间连接的转移事宜</li>
+<li>控制: 控制数据包得名于术语”媒体接入控制(Media Access Control, MAC)”，是用来控制对共享媒体(即物理媒介，如光缆)的访问<br> 1) 请求发送(Request To Send，RTS)数据包<br> 2) 清除发送(Clear To Send，CTS)数据包<br> 3) ACK确认(RTS/CTS)<br> 4) PS-Poll: 当一部移动工作站从省电模式中苏醒，便会发送一个 PS-Poll 帧给基站，以取得任何暂存帧<br>控制帧通常与数据帧搭配使用，负责区域的清空、信道的取得以及载波监听的维护，并于收到数据时予以正面的应答，借此促进工作站间数据传输的可靠性.</li>
+</ol>
+</blockquote>
+<p>这些不同类别的数据包被统称为”数据包类型”。</p>
+<h4 id="WLAN有以下三种网络拓扑结构"><a href="#WLAN有以下三种网络拓扑结构" class="headerlink" title="WLAN有以下三种网络拓扑结构:"></a>WLAN有以下三种网络拓扑结构:</h4><blockquote>
+<p>1) 独立基本服务集(Independent BSS, IBSS)网络(也叫ad-hoc网络)<br>2) 基本服务集(Basic Service Set, BSS)网络<br>3) 扩展服务集(Extent Service Set, ESS)网络</p>
+</blockquote>
+<h4 id="1-AD-Hoc网络"><a href="#1-AD-Hoc网络" class="headerlink" title="1) AD-Hoc网络"></a>1) AD-Hoc网络</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-01-adhoc.jpg" alt="adhoc-01"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-02-adhoc.png" alt="adhoc-02"><br>win7自带的AD-Hoc组建功能，可以让我们很方便的在一个小范围内快速组建”局域网”，联网打游戏啥的很方便</p>
+<h4 id="2-BSS网络"><a href="#2-BSS网络" class="headerlink" title="2) BSS网络"></a>2) BSS网络</h4><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://www.cnblogs.com/littlehann/p/3700357.html" target="_blank" rel="external">802.11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究</a></p>
 
       
 
