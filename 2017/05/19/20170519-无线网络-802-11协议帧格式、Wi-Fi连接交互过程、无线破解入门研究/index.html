@@ -26,7 +26,10 @@ Wi-Fi认证过程
 802.11标准中的数据安全加密协议">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-01-adhoc.jpg">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-02-adhoc.png">
-<meta property="og:updated_time" content="2017-05-19T03:23:29.443Z">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-03-bss.jpg">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-04-bss.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-05-ess.jpg">
+<meta property="og:updated_time" content="2017-05-19T03:32:54.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="802.11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究">
 <meta name="twitter:description" content="目录
@@ -209,8 +212,12 @@ var _hmt = _hmt || [];
 <li>802.11协议格式</li>
 <li>Wi-Fi认证过程</li>
 <li>802.11标准中的数据安全加密协议<a id="more"></a>
-<h3 id="1-802-11标准简介"><a href="#1-802-11标准简介" class="headerlink" title="1. 802.11标准简介"></a>1. 802.11标准简介</h3>IEEE 802.11是现今无线局域网通用的标准，它是由国际电机电子工程学会(IEEE)所定义的无线网络通信的标准。<br>其中定义了媒体访问控制层(MAC层)和物理层。物理层定义了工作在2.4GHz的ISM频段上的两种扩频作调制方式和一种红外传输的方式，总数据传输速率设计为2Mbit/s。两个设备可以自行构建临时网络，也可以在基站(Base Station, BS)或者接入点(Access Point，AP)的协调下通信。为了在不同的通讯环境下取得良好的通讯质量，采用CSMA/CA(Carrier Sense Multiple Access／Collision Avoidance)硬件沟通方式.<br>注意：802.11和Wi-Fi技术并不是同一个东西。Wi-Fi标准是802.11标准的一个子集，并且是Wi-Fi联盟负责管理。</li>
+</li>
 </ol>
+</blockquote>
+<h3 id="1-802-11标准简介"><a href="#1-802-11标准简介" class="headerlink" title="1. 802.11标准简介"></a>1. 802.11标准简介</h3><p>IEEE 802.11是现今无线局域网通用的标准，它是由国际电机电子工程学会(IEEE)所定义的无线网络通信的标准。<br>其中定义了媒体访问控制层(MAC层)和物理层。物理层定义了工作在2.4GHz的ISM频段上的两种扩频作调制方式和一种红外传输的方式，总数据传输速率设计为2Mbit/s。两个设备可以自行构建临时网络，也可以在基站(Base Station, BS)或者接入点(Access Point，AP)的协调下通信。为了在不同的通讯环境下取得良好的通讯质量，采用CSMA/CA(Carrier Sense Multiple Access／Collision Avoidance)硬件沟通方式.</p>
+<blockquote>
+<p>注意：802.11和Wi-Fi技术并不是同一个东西。Wi-Fi标准是802.11标准的一个子集，并且是Wi-Fi联盟负责管理。</p>
 </blockquote>
 <h4 id="在802-11协议的发展过程中，衍生出了一系列的和安全、加密相关的技术"><a href="#在802-11协议的发展过程中，衍生出了一系列的和安全、加密相关的技术" class="headerlink" title="在802.11协议的发展过程中，衍生出了一系列的和安全、加密相关的技术"></a>在802.11协议的发展过程中，衍生出了一系列的和安全、加密相关的技术</h4><blockquote>
 <ol>
@@ -233,7 +240,15 @@ var _hmt = _hmt || [];
 <p>1) 独立基本服务集(Independent BSS, IBSS)网络(也叫ad-hoc网络)<br>2) 基本服务集(Basic Service Set, BSS)网络<br>3) 扩展服务集(Extent Service Set, ESS)网络</p>
 </blockquote>
 <h4 id="1-AD-Hoc网络"><a href="#1-AD-Hoc网络" class="headerlink" title="1) AD-Hoc网络"></a>1) AD-Hoc网络</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-01-adhoc.jpg" alt="adhoc-01"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-02-adhoc.png" alt="adhoc-02"><br>win7自带的AD-Hoc组建功能，可以让我们很方便的在一个小范围内快速组建”局域网”，联网打游戏啥的很方便</p>
-<h4 id="2-BSS网络"><a href="#2-BSS网络" class="headerlink" title="2) BSS网络"></a>2) BSS网络</h4><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://www.cnblogs.com/littlehann/p/3700357.html" target="_blank" rel="external">802.11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究</a></p>
+<h4 id="2-BSS网络"><a href="#2-BSS网络" class="headerlink" title="2) BSS网络"></a>2) BSS网络</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-03-bss.jpg" alt="bss-03"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-04-bss.png" alt="bss-04"><br>对于个人PC来说，使用最多的所谓”无线Wi-Fi”指的就是BSS网络模式，我们通过AP(Access Point)接入点来接入网络.</p>
+<h4 id="3-ESS网络"><a href="#3-ESS网络" class="headerlink" title="3) ESS网络"></a>3) ESS网络</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-05-ess.jpg" alt="ess-05"><br>其中，ESS中的DS(分布式系统)是一个抽象系统，用来连接不同BSS的通信信道(通过路由服务)，这样就可以消除BSS中STA与STA之间直接传输距离受到物理设备的限制。<br>根据拓扑结构可以得出802.11的两类服务：</p>
+<blockquote>
+<ol>
+<li>站点服务SS(每个STA都要有的服务)<br> 1) 认证(Authentication)<br> 2) 解除认证(Deauthentication)<br> 3) 加密(Privacy)<br> 4) MSDU传递(MSDU delivery)</li>
+<li>分布式系统服务DSS(DS特有服务)<br> 1) 关联(Association)<br> 2) 解除关联(Deassociation)<br> 3) 分布(Distribution)<br> 4) 集成(Integration)<br> 5) 重关联(Ressociation)</li>
+</ol>
+</blockquote>
+<h3 id="802-11协议格式"><a href="#802-11协议格式" class="headerlink" title="802.11协议格式"></a>802.11协议格式</h3><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://www.cnblogs.com/littlehann/p/3700357.html" target="_blank" rel="external">802.11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究</a></p>
 
       
 
