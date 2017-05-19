@@ -29,7 +29,7 @@ Wi-Fi认证过程
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-03-bss.jpg">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-04-bss.png">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-05-ess.jpg">
-<meta property="og:updated_time" content="2017-05-19T03:32:54.367Z">
+<meta property="og:updated_time" content="2017-05-19T05:55:05.018Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="802.11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究">
 <meta name="twitter:description" content="目录
@@ -248,7 +248,9 @@ var _hmt = _hmt || [];
 <li>分布式系统服务DSS(DS特有服务)<br> 1) 关联(Association)<br> 2) 解除关联(Deassociation)<br> 3) 分布(Distribution)<br> 4) 集成(Integration)<br> 5) 重关联(Ressociation)</li>
 </ol>
 </blockquote>
-<h3 id="802-11协议格式"><a href="#802-11协议格式" class="headerlink" title="802.11协议格式"></a>802.11协议格式</h3><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://www.cnblogs.com/littlehann/p/3700357.html" target="_blank" rel="external">802.11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究</a></p>
+<h3 id="2-802-11协议格式"><a href="#2-802-11协议格式" class="headerlink" title="2.802.11协议格式"></a>2.802.11协议格式</h3><p>数据链路层是一个很靠近底层的通信协议，它使用Bit来表示信息(也使用Bit来标识数据包的开始和结束)，所以数据链路层的协议格式并没有强制要求一个固定的长度，即802.11协议长度是可变的。不同功能的数据帧长度会不一样。这一特性说明mac802.11数据帧显得更加灵活，然而，也会更加复杂。</p>
+<p>mac 802.11的数据帧长度不定主要是由于以下几点决定的:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1. mac地址数目不定，根据帧类型不同，mac 802.11的mac地址数会不一样。比如说 ACK帧仅有一个mac地址，而数据帧有3个mac地址，在WDS模式下，帧头有4个mac地址。</div><div class="line">2. 802.11的管理帧所携带的信息长度不定，在管理帧中，不仅仅只有一些类似于mac地址，分片标志之类的这些信息，而且另外还会包括一些其它的信息，这些信息有关于安全设置的，有关于物理</div><div class="line">通信的，比如说我们的SSID名称就是通过管理帧获得的。AP会根据不同的情况发送包含有不同信息的管理帧。 </div><div class="line">3. 加密(wep,wpa等)信息，QOS(quality of service)信息，若有加密的数据帧格式和没有加密的数据帧格式还不一样，加密数据帧格式还多了个加密头，用于解密用。然则QOS也是同样道理</div></pre></td></tr></table></figure></p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://www.cnblogs.com/littlehann/p/3700357.html" target="_blank" rel="external">802.11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究</a></p>
 
       
 
