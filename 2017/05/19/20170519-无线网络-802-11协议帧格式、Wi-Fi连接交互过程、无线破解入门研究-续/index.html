@@ -36,7 +36,7 @@ Wi-Fi认证过程
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-35-association-04.png">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-36-disassociation-01.png">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-37-disassociation-02.png">
-<meta property="og:updated_time" content="2017-05-19T08:08:29.995Z">
+<meta property="og:updated_time" content="2017-05-19T08:11:27.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续">
 <meta name="twitter:description" content="目录
@@ -234,7 +234,19 @@ var _hmt = _hmt || [];
 <h4 id="0x2-基于WEP加密的连接过程"><a href="#0x2-基于WEP加密的连接过程" class="headerlink" title="0x2: 基于WEP加密的连接过程"></a>0x2: 基于WEP加密的连接过程</h4><h4 id="0x3-基于WPA-PSK加密的连接过程"><a href="#0x3-基于WPA-PSK加密的连接过程" class="headerlink" title="0x3: 基于WPA-PSK加密的连接过程"></a>0x3: 基于WPA-PSK加密的连接过程</h4><blockquote>
 <p>这两种连接交互过程原理上和无加密方式(开放系统方式)相同，感兴趣的朋友可以使用wireshark进行抓包实验</p>
 </blockquote>
-<h3 id="4-802-11标准中的数据安全加密协议"><a href="#4-802-11标准中的数据安全加密协议" class="headerlink" title="4. 802.11标准中的数据安全加密协议"></a>4. 802.11标准中的数据安全加密协议</h3><p>在IEEE 802.11协议中的加密算法有如下几个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1. [WEP，Wired Equivalent Privacy: 802.11中最早期的加密标准](http://en.wikipedia.org/wiki/Wired_Equivalent_Privacy)</div><div class="line"></div><div class="line">2. [CCMP(CTR with CBC-MAC Protocol): 基于AES的全新加密协议，在IEEE 802.11i中提出](http://en.wikipedia.org/wiki/CCMP)</div><div class="line"></div><div class="line">3. [WPA(Wi-Fi Protected Access)](http://en.wikipedia.org/wiki/WPA)</div><div class="line"></div><div class="line">4. [TKIP(Temporal Key Integrity Protocol)](http://en.wikipedia.org/wiki/Temporal_Key_Integrity_Protocol)</div><div class="line"></div><div class="line">5. [WPA2(Wi-Fi Protected Access 2)](http://en.wikipedia.org/wiki/WPA2)</div></pre></td></tr></table></figure></p>
+<h3 id="4-802-11标准中的数据安全加密协议"><a href="#4-802-11标准中的数据安全加密协议" class="headerlink" title="4. 802.11标准中的数据安全加密协议"></a>4. 802.11标准中的数据安全加密协议</h3><p>在IEEE 802.11协议中的加密算法有如下几个</p>
+<ol>
+<li><p><a href="http://en.wikipedia.org/wiki/Wired_Equivalent_Privacy" target="_blank" rel="external">WEP，Wired Equivalent Privacy: 802.11中最早期的加密标准</a></p>
+</li>
+<li><p><a href="http://en.wikipedia.org/wiki/CCMP" target="_blank" rel="external">CCMP(CTR with CBC-MAC Protocol): 基于AES的全新加密协议，在IEEE 802.11i中提出</a></p>
+</li>
+<li><p><a href="http://en.wikipedia.org/wiki/WPA" target="_blank" rel="external">WPA(Wi-Fi Protected Access)</a></p>
+</li>
+<li><p><a href="http://en.wikipedia.org/wiki/Temporal_Key_Integrity_Protocol" target="_blank" rel="external">TKIP(Temporal Key Integrity Protocol)</a></p>
+</li>
+<li><p><a href="http://en.wikipedia.org/wiki/WPA2" target="_blank" rel="external">WPA2(Wi-Fi Protected Access 2)</a></p>
+</li>
+</ol>
 <h4 id="后续希望做的事"><a href="#后续希望做的事" class="headerlink" title="后续希望做的事"></a>后续希望做的事</h4><p>研究上面描述的加密算法以及它们的协议交互过程；<br>研究一下伪AP、流量劫持的原理、实现；<br>SSL中间人攻击，获取明文数据；<br>无线钓鱼</p>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://www.cnblogs.com/littlehann/p/3700357.html" target="_blank" rel="external">802.11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究</a></p>
 <p>【END】</p>
