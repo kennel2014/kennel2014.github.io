@@ -22,7 +22,21 @@ Wi-Fi认证过程
 802.11标准中的数据安全加密协议">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-01.png">
 <meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-02.png">
-<meta property="og:updated_time" content="2017-05-19T06:56:37.445Z">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-24-wificonnect-status.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-25-probeReq-01.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-25-probeReq-02.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-27-ap-probeRsp.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-28-ap-auth-01.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-29-ap-auth-02.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-30-ap-auth-03.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-31-ap-auth-04.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-32-association-01.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-33-association-02.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-34-association-03.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-35-association-04.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-36-disassociation-01.png">
+<meta property="og:image" content="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-37-disassociation-02.png">
+<meta property="og:updated_time" content="2017-05-19T08:02:57.081Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续">
 <meta name="twitter:description" content="目录
@@ -208,8 +222,25 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>ifconfig -a<br>ifconfig wlan1 up<br>airmon-ng start wlan1<br>启动wireshark，选择mon0网卡(开启了Monotor模式的虚拟网卡</p>
 </blockquote>
-<h3 id="0x1-普通无加密连接过程"><a href="#0x1-普通无加密连接过程" class="headerlink" title="0x1: 普通无加密连接过程"></a>0x1: 普通无加密连接过程</h3><h4 id="1-AP发送Beacon广播管理帧"><a href="#1-AP发送Beacon广播管理帧" class="headerlink" title="1. AP发送Beacon广播管理帧"></a>1. AP发送Beacon广播管理帧</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-01.png" alt="ap-beacon-01"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-02.png" alt="ap-beacon-02"><br>因为AP发送的这个Beacon管理帧数据包是广播地址，所以我们的PCMIA内置网卡、或者USB外界网卡会接收到这个数据包，然后在我们的”无线连接列表”中显示出来</p>
+<h3 id="0x1-普通无加密连接过程"><a href="#0x1-普通无加密连接过程" class="headerlink" title="0x1: 普通无加密连接过程"></a>0x1: 普通无加密连接过程</h3><h4 id="1-AP发送Beacon广播管理帧"><a href="#1-AP发送Beacon广播管理帧" class="headerlink" title="1. AP发送Beacon广播管理帧"></a>1. AP发送Beacon广播管理帧</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-01.png" alt="ap-beacon-01"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-22-ap-beacon-02.png" alt="ap-beacon-02"><br>因为AP发送的这个Beacon管理帧数据包是广播地址，所以我们的PCMIA内置网卡、或者USB外界网卡会接收到这个数据包，然后在我们的”无线连接列表”中显示出来<br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-24-wificonnect-status.png" alt="wifistatus"></p>
+<h4 id="2-客户端向承载指定SSID的AP发送Probe-Request-探测请求-帧"><a href="#2-客户端向承载指定SSID的AP发送Probe-Request-探测请求-帧" class="headerlink" title="2. 客户端向承载指定SSID的AP发送Probe Request(探测请求)帧"></a>2. 客户端向承载指定SSID的AP发送Probe Request(探测请求)帧</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-25-probeReq-01.png" alt="ap-probe-req-01"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-25-probeReq-02.png" alt="ap-probe-req-02"><br>当我们点击”连接”的时候，无线网卡就会发送一个Prob数据帧，用来向AP请求连接</p>
+<h4 id="3-AP接入点对客户端的SSID连接请求进行应答"><a href="#3-AP接入点对客户端的SSID连接请求进行应答" class="headerlink" title="3. AP接入点对客户端的SSID连接请求进行应答"></a>3. AP接入点对客户端的SSID连接请求进行应答</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-27-ap-probeRsp.png" alt="ap-probe-rsp-27"><br>AP对客户端的连接作出了回应，并表示不接受任何形式的”帧有效负载加密(frame-payload-encryption)”</p>
+<h4 id="4-客户端对目标AP请求进行身份认证-Authentication"><a href="#4-客户端对目标AP请求进行身份认证-Authentication" class="headerlink" title="4. 客户端对目标AP请求进行身份认证(Authentication)"></a>4. 客户端对目标AP请求进行身份认证(Authentication)</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-28-ap-auth-01.png" alt="auth-28"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-29-ap-auth-02.png" alt="auth-29"></p>
+<h4 id="5-AP对客户端的身份认证-Authentication-请求作出回应"><a href="#5-AP对客户端的身份认证-Authentication-请求作出回应" class="headerlink" title="5. AP对客户端的身份认证(Authentication)请求作出回应"></a>5. AP对客户端的身份认证(Authentication)请求作出回应</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-30-ap-auth-03.png" alt="auth-30"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-31-ap-auth-04.png" alt="auth-31"><br>AP回应，表示接收身份认证</p>
+<h4 id="6-客户端向AP发送连接-Association-请求"><a href="#6-客户端向AP发送连接-Association-请求" class="headerlink" title="6. 客户端向AP发送连接(Association)请求"></a>6. 客户端向AP发送连接(Association)请求</h4><p>身份认证通过之后，所有的准备工作都做完了，客户端这个时候可以向WLAN AP发起正式的连接请求，请求接入WLAN<br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-32-association-01.png" alt="association-32"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-33-association-02.png" alt="association-33"></p>
+<h4 id="7-AP对连接-Association-请求进行回应"><a href="#7-AP对连接-Association-请求进行回应" class="headerlink" title="7. AP对连接(Association)请求进行回应"></a>7. AP对连接(Association)请求进行回应</h4><p><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-34-association-03.png" alt="association-34"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-35-association-04.png" alt="association-35"><br>AP对客户端的连接请求(Association)予以了回应(包括SSID、性能、加密设置等)。至此，Wi-Fi的连接身份认证交互就全部结束了，之后就可以正常进行数据发送了</p>
+<h4 id="8-客户端向AP请求断开连接-Disassociation"><a href="#8-客户端向AP请求断开连接-Disassociation" class="headerlink" title="8. 客户端向AP请求断开连接(Disassociation)"></a>8. 客户端向AP请求断开连接(Disassociation)</h4><p>当我们点击”断开连接”的时候，网卡会向AP发送一个断开连接的管理数据帧，请求进行断开连接<br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-36-disassociation-01.png" alt="disassociation-36"><br><img src="http://opofdk402.bkt.clouddn.com/blogkaka_20170519-37-disassociation-02.png" alt="disassociation-37"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">由此，我们可以发现，基于对数据帧格式的了解，黑客可以发起一些针对协议的攻击</div><div class="line">1. Deanthentication攻击</div><div class="line">2. Disassociation攻击</div></pre></td></tr></table></figure></p>
+<p>黑客可以利用这种方式加快对WEP/WPS-PSK保护的无线局域网的攻击，迫使客户端重新连接并且产生ARP流量(基于WEP的攻击)、或捕获重新进行WPA连接的四次握手，然后可以对密码进行离线字典或彩虹表破解攻击</p>
+<h4 id="0x2-基于WEP加密的连接过程"><a href="#0x2-基于WEP加密的连接过程" class="headerlink" title="0x2: 基于WEP加密的连接过程"></a>0x2: 基于WEP加密的连接过程</h4><h4 id="0x3-基于WPA-PSK加密的连接过程"><a href="#0x3-基于WPA-PSK加密的连接过程" class="headerlink" title="0x3: 基于WPA-PSK加密的连接过程"></a>0x3: 基于WPA-PSK加密的连接过程</h4><blockquote>
+<p>这两种连接交互过程原理上和无加密方式(开放系统方式)相同，感兴趣的朋友可以使用wireshark进行抓包实验</p>
+</blockquote>
+<h3 id="4-802-11标准中的数据安全加密协议"><a href="#4-802-11标准中的数据安全加密协议" class="headerlink" title="4. 802.11标准中的数据安全加密协议"></a>4. 802.11标准中的数据安全加密协议</h3><p>在IEEE 802.11协议中的加密算法有如下几个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">1. [WEP，Wired Equivalent Privacy: 802.11中最早期的加密标准](http://en.wikipedia.org/wiki/Wired_Equivalent_Privacy)</div><div class="line"></div><div class="line">2. [CCMP(CTR with CBC-MAC Protocol): 基于AES的全新加密协议，在IEEE 802.11i中提出](http://en.wikipedia.org/wiki/CCMP)</div><div class="line"></div><div class="line">3. [WPA(Wi-Fi Protected Access)](http://en.wikipedia.org/wiki/WPA)</div><div class="line"></div><div class="line">4. [TKIP(Temporal Key Integrity Protocol)](http://en.wikipedia.org/wiki/Temporal_Key_Integrity_Protocol)</div><div class="line"></div><div class="line">5. [WPA2(Wi-Fi Protected Access 2)](http://en.wikipedia.org/wiki/WPA2)</div></pre></td></tr></table></figure></p>
+<h4 id="后续希望做的事"><a href="#后续希望做的事" class="headerlink" title="后续希望做的事"></a>后续希望做的事</h4><p>研究上面描述的加密算法以及它们的协议交互过程；<br>研究一下伪AP、流量劫持的原理、实现；<br>SSL中间人攻击，获取明文数据；<br>无线钓鱼</p>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="http://www.cnblogs.com/littlehann/p/3700357.html" target="_blank" rel="external">802.11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究</a></p>
+<p>【END】</p>
+<blockquote>
+<p>近来经济拮据，如本文对阁下有帮助，可慷慨解囊赞助笔者以输出更多好文章。感谢！</p>
+</blockquote>
 
       
 
