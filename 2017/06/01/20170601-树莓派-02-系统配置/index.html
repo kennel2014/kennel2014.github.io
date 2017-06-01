@@ -11,15 +11,7 @@
   <meta name="description" content="设置root直接登录（笔者是因为懒，所以直接root直接登录，不需要考虑以后权限问题，可以不设置这一项）
 #设置root密码
 
-sudo passwd root
-
-#切换到root用户
-
-sudo -s
-
-想要在登录界面使用root身份登录，可编辑/etc/lightdm/lightdm.conf文件，如没有此文件，直接创建
-
-1.在terminal下输入gedit /usr/share/ligh">
+sudo passwd root">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派-02.系统配置">
 <meta property="og:url" content="http://sniperkaka.com/2017/06/01/20170601-树莓派-02-系统配置/index.html">
@@ -27,30 +19,14 @@ sudo -s
 <meta property="og:description" content="设置root直接登录（笔者是因为懒，所以直接root直接登录，不需要考虑以后权限问题，可以不设置这一项）
 #设置root密码
 
-sudo passwd root
-
-#切换到root用户
-
-sudo -s
-
-想要在登录界面使用root身份登录，可编辑/etc/lightdm/lightdm.conf文件，如没有此文件，直接创建
-
-1.在terminal下输入gedit /usr/share/ligh">
-<meta property="og:updated_time" content="2017-06-01T05:10:03.120Z">
+sudo passwd root">
+<meta property="og:updated_time" content="2017-06-01T05:16:06.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派-02.系统配置">
 <meta name="twitter:description" content="设置root直接登录（笔者是因为懒，所以直接root直接登录，不需要考虑以后权限问题，可以不设置这一项）
 #设置root密码
 
-sudo passwd root
-
-#切换到root用户
-
-sudo -s
-
-想要在登录界面使用root身份登录，可编辑/etc/lightdm/lightdm.conf文件，如没有此文件，直接创建
-
-1.在terminal下输入gedit /usr/share/ligh">
+sudo passwd root">
   
     <link rel="alternative" href="/atom.xml" title="卡卡大魔王" type="application/atom+xml">
   
@@ -221,18 +197,14 @@ var _hmt = _hmt || [];
         <h3 id="设置root直接登录"><a href="#设置root直接登录" class="headerlink" title="设置root直接登录"></a>设置root直接登录</h3><p>（笔者是因为懒，所以直接root直接登录，不需要考虑以后权限问题，可以不设置这一项）</p>
 <p>#设置root密码</p>
 <blockquote>
-<p>sudo passwd root</p>
-</blockquote>
-<p>#切换到root用户</p>
-<blockquote>
-<p>sudo -s</p>
+<p>sudo passwd root<br><a id="more"></a></p>
+<p>#切换到root用户<br>sudo -s</p>
 </blockquote>
 <p>想要在登录界面使用root身份登录，可编辑/etc/lightdm/lightdm.conf文件，如没有此文件，直接创建</p>
 <blockquote>
 <p>1.在terminal下输入<br>gedit /usr/share/lightdm/lightdm.conf.d/50-ubuntu-mate.conf<br>内容添加：<br>user-session=mate<br>allow-guest=false<br>greeter-show-manual-login=true<br>此步结束后可以使用root用户登录。<br>2.打开/etc/lightdm/lightdm.conf文件，更改内容如下<br>autologin-guest=false<br>autologin-user=root<br>autologin-user-timeout=0<br>此步结束后可以免密码登录root<br>3.在终端中用命令vi /root/.profile，打开文件后找到“mesg n”，<br>将其更改为“tty -s &amp;&amp; mesg n”。<br>4.用reboot命令重启即可</p>
 </blockquote>
-<h3 id="修改文件系统大小"><a href="#修改文件系统大小" class="headerlink" title="修改文件系统大小"></a>修改文件系统大小</h3><a id="more"></a>
-<blockquote>
+<h3 id="修改文件系统大小"><a href="#修改文件系统大小" class="headerlink" title="修改文件系统大小"></a>修改文件系统大小</h3><blockquote>
 <p>sudo fdisk /dev/mmcblk0<br>输入d 回车 （delete a partition）<br>输入2 回车 （Partition number）<br>输入n 回车 （add a new partition）<br>输入p 回车 （pint the partition table）<br>输入2 回车 （Partition number）<br>输入回车回车 w 回车 （write table to disk and exit）<br>然后重启系统后输入sudo resize2fs /dev/mmcblk0p2<br>再重启系统</p>
 </blockquote>
 <h3 id="设置windows远程桌面"><a href="#设置windows远程桌面" class="headerlink" title="设置windows远程桌面"></a>设置windows远程桌面</h3>

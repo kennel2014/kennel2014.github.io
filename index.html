@@ -186,17 +186,7 @@ var _hmt = _hmt || [];
         <h3 id="设置root直接登录"><a href="#设置root直接登录" class="headerlink" title="设置root直接登录"></a>设置root直接登录</h3><p>（笔者是因为懒，所以直接root直接登录，不需要考虑以后权限问题，可以不设置这一项）</p>
 <p>#设置root密码</p>
 <blockquote>
-<p>sudo passwd root</p>
-</blockquote>
-<p>#切换到root用户</p>
-<blockquote>
-<p>sudo -s</p>
-</blockquote>
-<p>想要在登录界面使用root身份登录，可编辑/etc/lightdm/lightdm.conf文件，如没有此文件，直接创建</p>
-<blockquote>
-<p>1.在terminal下输入<br>gedit /usr/share/lightdm/lightdm.conf.d/50-ubuntu-mate.conf<br>内容添加：<br>user-session=mate<br>allow-guest=false<br>greeter-show-manual-login=true<br>此步结束后可以使用root用户登录。<br>2.打开/etc/lightdm/lightdm.conf文件，更改内容如下<br>autologin-guest=false<br>autologin-user=root<br>autologin-user-timeout=0<br>此步结束后可以免密码登录root<br>3.在终端中用命令vi /root/.profile，打开文件后找到“mesg n”，<br>将其更改为“tty -s &amp;&amp; mesg n”。<br>4.用reboot命令重启即可</p>
-</blockquote>
-<h3 id="修改文件系统大小"><a href="#修改文件系统大小" class="headerlink" title="修改文件系统大小"></a>修改文件系统大小</h3>
+<p>sudo passwd root<br>
         
           <a class="article-more-a" href="/2017/06/01/20170601-树莓派-02-系统配置/#more">more >></a>
         
