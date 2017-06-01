@@ -6,14 +6,51 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://sniperkaka.com">
-  <title>Archives: 2017 | 卡卡大魔王</title>
+  <title>树莓派-02.系统配置 | 卡卡大魔王</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="卡卡大魔王">
-<meta property="og:url" content="http://sniperkaka.com/archives/2017/index.html">
+  <meta name="description" content="设置root直接登录（笔者是因为懒，所以直接root直接登录，不需要考虑以后权限问题，可以不设置这一项）
+#设置root密码
+
+sudo passwd root
+
+#切换到root用户
+
+sudo -s
+
+想要在登录界面使用root身份登录，可编辑/etc/lightdm/lightdm.conf文件，如没有此文件，直接创建
+
+1.在terminal下输入gedit /usr/share/ligh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树莓派-02.系统配置">
+<meta property="og:url" content="http://sniperkaka.com/2017/06/01/20170601-树莓派-02-系统配置/index.html">
 <meta property="og:site_name" content="卡卡大魔王">
+<meta property="og:description" content="设置root直接登录（笔者是因为懒，所以直接root直接登录，不需要考虑以后权限问题，可以不设置这一项）
+#设置root密码
+
+sudo passwd root
+
+#切换到root用户
+
+sudo -s
+
+想要在登录界面使用root身份登录，可编辑/etc/lightdm/lightdm.conf文件，如没有此文件，直接创建
+
+1.在terminal下输入gedit /usr/share/ligh">
+<meta property="og:updated_time" content="2017-06-01T05:10:03.120Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="卡卡大魔王">
+<meta name="twitter:title" content="树莓派-02.系统配置">
+<meta name="twitter:description" content="设置root直接登录（笔者是因为懒，所以直接root直接登录，不需要考虑以后权限问题，可以不设置这一项）
+#设置root密码
+
+sudo passwd root
+
+#切换到root用户
+
+sudo -s
+
+想要在登录界面使用root身份登录，可编辑/etc/lightdm/lightdm.conf文件，如没有此文件，直接创建
+
+1.在terminal下输入gedit /usr/share/ligh">
   
     <link rel="alternative" href="/atom.xml" title="卡卡大魔王" type="application/atom+xml">
   
@@ -161,36 +198,77 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-20170601-树莓派-02-系统配置" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      树莓派-02.系统配置
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/01/20170601-树莓派-02-系统配置/" class="archive-article-date">
+
+        
+        <a href="/2017/06/01/20170601-树莓派-02-系统配置/" class="archive-article-date">
   	<time datetime="2017-06-01T03:17:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-01</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/01/20170601-树莓派-02-系统配置/">树莓派-02.系统配置</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="设置root直接登录"><a href="#设置root直接登录" class="headerlink" title="设置root直接登录"></a>设置root直接登录</h3><p>（笔者是因为懒，所以直接root直接登录，不需要考虑以后权限问题，可以不设置这一项）</p>
+<p>#设置root密码</p>
+<blockquote>
+<p>sudo passwd root</p>
+</blockquote>
+<p>#切换到root用户</p>
+<blockquote>
+<p>sudo -s</p>
+</blockquote>
+<p>想要在登录界面使用root身份登录，可编辑/etc/lightdm/lightdm.conf文件，如没有此文件，直接创建</p>
+<blockquote>
+<p>1.在terminal下输入<br>gedit /usr/share/lightdm/lightdm.conf.d/50-ubuntu-mate.conf<br>内容添加：<br>user-session=mate<br>allow-guest=false<br>greeter-show-manual-login=true<br>此步结束后可以使用root用户登录。<br>2.打开/etc/lightdm/lightdm.conf文件，更改内容如下<br>autologin-guest=false<br>autologin-user=root<br>autologin-user-timeout=0<br>此步结束后可以免密码登录root<br>3.在终端中用命令vi /root/.profile，打开文件后找到“mesg n”，<br>将其更改为“tty -s &amp;&amp; mesg n”。<br>4.用reboot命令重启即可</p>
+</blockquote>
+<h3 id="修改文件系统大小"><a href="#修改文件系统大小" class="headerlink" title="修改文件系统大小"></a>修改文件系统大小</h3><a id="more"></a>
+<blockquote>
+<p>sudo fdisk /dev/mmcblk0<br>输入d 回车 （delete a partition）<br>输入2 回车 （Partition number）<br>输入n 回车 （add a new partition）<br>输入p 回车 （pint the partition table）<br>输入2 回车 （Partition number）<br>输入回车回车 w 回车 （write table to disk and exit）<br>然后重启系统后输入sudo resize2fs /dev/mmcblk0p2<br>再重启系统</p>
+</blockquote>
+<h3 id="设置windows远程桌面"><a href="#设置windows远程桌面" class="headerlink" title="设置windows远程桌面"></a>设置windows远程桌面</h3>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢大好人~~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://opofdk402.bkt.clouddn.com/blogkaka_weixin_pay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -202,364 +280,85 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://sniperkaka.com/2017/06/01/20170601-树莓派-02-系统配置/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/31/20170531-树莓派-树莓派初体验/" class="archive-article-date">
-  	<time datetime="2017-05-31T08:39:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/31/20170531-树莓派-树莓派初体验/">树莓派-01.树莓派初体验</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/20/20170520-读书笔记-第一行代码-02-activity/" class="archive-article-date">
-  	<time datetime="2017-05-20T05:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/20/20170520-读书笔记-第一行代码-02-activity/">读书笔记-第一行代码-02-activity</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/19/20170519-无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续/" class="archive-article-date">
-  	<time datetime="2017-05-19T06:35:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/19/20170519-无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续/">802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究-续</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">无线网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/19/20170519-无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究/" class="archive-article-date">
-  	<time datetime="2017-05-19T02:01:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/19/20170519-无线网络-802-11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究/">802.11协议帧格式、Wi-Fi连接交互过程、无线破解入门研究</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">无线网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/19/20170519-读书笔记-三体-黑暗森林/" class="archive-article-date">
-  	<time datetime="2017-05-19T00:26:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/19/20170519-读书笔记-三体-黑暗森林/">读书笔记-三体-黑暗森林</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">小说</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/18/20170518-读书笔记-三体-地球往事/" class="archive-article-date">
-  	<time datetime="2017-05-18T06:31:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/18/20170518-读书笔记-三体-地球往事/">读书笔记-三体-地球往事</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">小说</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/17/20170517-读书笔记-第一行代码-01-第一行Android代码/" class="archive-article-date">
-  	<time datetime="2017-05-17T02:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/17/20170517-读书笔记-第一行代码-01-第一行Android代码/">读书笔记-第一行代码-01-第一行Android代码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/16/20170516-学习笔记-谷歌android培训指南-04-支持不同的设备/" class="archive-article-date">
-  	<time datetime="2017-05-16T08:40:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/16/20170516-学习笔记-谷歌android培训指南-04-支持不同的设备/">学习笔记-谷歌android培训指南-04-支持不同的设备</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/15/20170515-学习笔记-谷歌android培训指南-03-启动另一个-Activity/" class="archive-article-date">
-  	<time datetime="2017-05-15T05:48:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/15/20170515-学习笔记-谷歌android培训指南-03-启动另一个-Activity/">学习笔记-谷歌android培训指南-03-启动另一个 Activity</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/05/31/20170531-树莓派-树莓派初体验/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">树莓派-01.树莓派初体验</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="page-number" href="/archives/2017/page/3/">3</a><a class="extend next" rel="next" href="/archives/2017/page/2/">Next &raquo;</a>
-    </nav>
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
 
@@ -594,8 +393,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

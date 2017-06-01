@@ -163,6 +163,83 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-20170601-树莓派-02-系统配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/01/20170601-树莓派-02-系统配置/">树莓派-02.系统配置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/01/20170601-树莓派-02-系统配置/" class="archive-article-date">
+  	<time datetime="2017-06-01T03:17:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="设置root直接登录"><a href="#设置root直接登录" class="headerlink" title="设置root直接登录"></a>设置root直接登录</h3><p>（笔者是因为懒，所以直接root直接登录，不需要考虑以后权限问题，可以不设置这一项）</p>
+<p>#设置root密码</p>
+<blockquote>
+<p>sudo passwd root</p>
+</blockquote>
+<p>#切换到root用户</p>
+<blockquote>
+<p>sudo -s</p>
+</blockquote>
+<p>想要在登录界面使用root身份登录，可编辑/etc/lightdm/lightdm.conf文件，如没有此文件，直接创建</p>
+<blockquote>
+<p>1.在terminal下输入<br>gedit /usr/share/lightdm/lightdm.conf.d/50-ubuntu-mate.conf<br>内容添加：<br>user-session=mate<br>allow-guest=false<br>greeter-show-manual-login=true<br>此步结束后可以使用root用户登录。<br>2.打开/etc/lightdm/lightdm.conf文件，更改内容如下<br>autologin-guest=false<br>autologin-user=root<br>autologin-user-timeout=0<br>此步结束后可以免密码登录root<br>3.在终端中用命令vi /root/.profile，打开文件后找到“mesg n”，<br>将其更改为“tty -s &amp;&amp; mesg n”。<br>4.用reboot命令重启即可</p>
+</blockquote>
+<h3 id="修改文件系统大小"><a href="#修改文件系统大小" class="headerlink" title="修改文件系统大小"></a>修改文件系统大小</h3>
+        
+          <a class="article-more-a" href="/2017/06/01/20170601-树莓派-02-系统配置/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/01/20170601-树莓派-02-系统配置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-20170531-树莓派-树莓派初体验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -730,70 +807,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/05/15/20170515-学习笔记-谷歌android培训指南-03-启动另一个-Activity/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-20170514-学习笔记-谷歌android培训指南-02-构建简单的用户界面" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/14/20170514-学习笔记-谷歌android培训指南-02-构建简单的用户界面/">学习笔记-谷歌android培训指南-02.构建简单的用户界面</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/14/20170514-学习笔记-谷歌android培训指南-02-构建简单的用户界面/" class="archive-article-date">
-  	<time datetime="2017-05-14T05:57:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="谷歌android培训指南-02-构建简单的用户界面"><a href="#谷歌android培训指南-02-构建简单的用户界面" class="headerlink" title="谷歌android培训指南-02-构建简单的用户界面"></a>谷歌android培训指南-02-构建简单的用户界面</h3><h4 id="本篇介绍如何创建一个-XML-格式的布局，其中包含一个文本字段和一个按钮。"><a href="#本篇介绍如何创建一个-XML-格式的布局，其中包含一个文本字段和一个按钮。" class="headerlink" title="本篇介绍如何创建一个 XML 格式的布局，其中包含一个文本字段和一个按钮。"></a>本篇介绍如何创建一个 XML 格式的布局，其中包含一个文本字段和一个按钮。</h4><p>Android 应用的图形界面使用 View 对象和 ViewGroup 对象层次结构而构建。View 对象通常为按钮或文本字段之类的 UI 小部件。而 ViewGroup 对象则为不可见的视图容器，它们定义子视图的布局，比如是网格布局还是垂直列表布局。<br>Android 提供对应于 View 和 ViewGroup 子类的 XML 词汇，以便使用 UI 元素层次结构以 XML 格式定义 UI。<br>布局是 ViewGroup 的子类。<br>
-        
-          <a class="article-more-a" href="/2017/05/14/20170514-学习笔记-谷歌android培训指南-02-构建简单的用户界面/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/14/20170514-学习笔记-谷歌android培训指南-02-构建简单的用户界面/">展开全文 >></a>
         </p>
       
 
