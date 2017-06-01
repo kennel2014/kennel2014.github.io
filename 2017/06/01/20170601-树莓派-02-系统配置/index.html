@@ -20,7 +20,7 @@ sudo passwd root">
 #设置root密码
 
 sudo passwd root">
-<meta property="og:updated_time" content="2017-06-01T06:45:03.347Z">
+<meta property="og:updated_time" content="2017-06-01T06:47:28.032Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派-02.系统配置">
 <meta name="twitter:description" content="设置root直接登录（笔者是因为懒，所以直接root直接登录，不需要考虑以后权限问题，可以不设置这一项）
@@ -214,8 +214,8 @@ var _hmt = _hmt || [];
 <h3 id="设置ssh"><a href="#设置ssh" class="headerlink" title="设置ssh"></a>设置ssh</h3><p>判断是否安装ssh服务，命令：ssh localhost<br>如果提示：<br>    ssh: connect to host localhost port 22: Connection refused<br>就表示没有还没有安装SSH，<br>安装命令：sudo apt-get install openssh-server<br>卸载命令：sudo apt-get remove openssh-server<br>确认是否安装正常  ps -e|grep ssh<br>      1418 ?        00:00:00 sshd<br>看到sshd那说明ssh-server已经启动了<br>如果没有则可以这样启动：sudo /etc/init.d/ssh start 或者 service ssh start</p>
 <p>sudo /etc/init.d/ssh restart 重启</p>
 <blockquote>
-<p>当我们使用root用户SSH连接远程主机时，显示服务器拒绝了密码，请再试一次。这种情况一般是SSH配置没有允许root账户登录所致。<br>解决办法是：修改SSH的配置文件/etc/ssh/sshd_config<br>修改 vim /etc/ssh/sshd_config<br>找到# Authentication:<br>LoginGraceTime 120<br>PermitRootLogin without passwd<br>StrictModes yes<br>改成</p>
-<h1 id="Authentication"><a href="#Authentication" class="headerlink" title="Authentication:"></a>Authentication:</h1><p>LoginGraceTime 120<br>PermitRootLogin yes<br>StrictModes yes<br>然后重启SSH服务（/etc/init.d/ssh restart）即可。</p>
+<p>当我们使用root用户SSH连接远程主机时，显示服务器拒绝了密码，请再试一次。这种情况一般是SSH配置没有允许root账户登录所致。<br>解决办法是：修改SSH的配置文件/etc/ssh/sshd_config<br>修改 vim /etc/ssh/sshd_config<br>找到#Authentication:<br>LoginGraceTime 120<br>PermitRootLogin without passwd<br>StrictModes yes<br>改成</p>
+<p>#Authentication:<br>LoginGraceTime 120<br>PermitRootLogin yes<br>StrictModes yes<br>然后重启SSH服务（/etc/init.d/ssh restart）即可。</p>
 </blockquote>
 <p>ssh-server配置文件为：/etc/ssh/sshd_config，更改配置需重启SSH服务。</p>
 <p>ps -e |grep ssh<br>如果可以看到ssh-agent，说明Ubuntu缺省安装了openssh-client，可以在树莓派ssh登录其他系统<br>如果可以看到sshd，说明安装了openssh-server，可以从其他系统通过ssh登录到树莓派。</p>
